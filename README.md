@@ -11,3 +11,4 @@
     -   Comunicació en temps de risc
 3.  Recursos: Canals
 4.  Execució i avaluació: Calendari i indicadors  
+# PlaCom
