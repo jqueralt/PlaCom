@@ -2,14 +2,12 @@
 
 ## Índex
 
-1.  Introducció
-2.  Eixos de comunicació
-
--   Imatge de centre
--   Difusió externa
--   Comunicació interna
--   Participació en xarxes
--   Comunicació en temps de risc
-
-3.  Recursos
-4.  Seguiment i avaluació  
+1.  Introducció: Objectius
+2.  Eixos de comunicació: destinataris
+    -   Imatge de centre
+    -   Difusió externa
+    -   Comunicació interna
+    -   Participació en xarxes
+    -   Comunicació en temps de risc
+3.  Recursos: Canals
+4.  Execució i avaluació: Calendari i indicadors  
