@@ -1,0 +1,269 @@
+\documentclass[fontsize=10pt,%
+paper=a4,%
+%BCOR=12mm,% marge per relligar
+%DIV=calc,%
+DIV=14,%
+twoside,%per defecte 1 cara
+pagesize=auto,%
+%parskip=full,% no sagna paràgrafs però dóna més espai entre paràgrafs
+parskip=half,
+%parskip=false,
+captions=tableheading,%
+numbers=noenddot,%
+toc=graduated%
+%toc=flat
+%]{scrartcl}  %toc=flat,%índex amb ítems sense sagnar
+]{scrreprt}
+%--------------- configuració bàsica -----------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{fix-cm} %per fer lletres gegants
+
+\usepackage[catalan]{babel}                    % patrons de separació de paraules
+%%%%%%%%%%%%%%%%%%%%% Guionatge
+%
+\hyphenation{} %llista de paraules separades per espais en blancc
+%\babelhyphenation[catalan]{co-l·la-bo-ra-ció}
+
+
+\usepackage[scaled=.88]{beramono}             % Bera-Monospace
+\usepackage[scaled=.86]{berasans}             % Bera Sans-Serif
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage{pifont}
+%\usepackage{fouriernc}
+%\usepackage{tgheros}
+%\usepackage[scaled=.9]{helvet}
+%\usepackage[osf]{mathpazo}                    % Palatino com a font per defecte
+%\linespread{1.05}\selectfont                  % Palatino necessita més espai, aquí el 5%
+%\usepackage{ifsym}                            % paquet per fer lletra de calculadora
+%%% colors
+\usepackage[pdftex,%					paquet per fer aparèixer els colors
+dvipdfm,%
+dvipsnames,%
+svgnames,%
+usenames,%
+table]{xcolor}
+%\usepackage[dvipsnames]{color}  % paquet de 68 colors
+\definecolor{gris}{gray}{0.45}                   %gris
+\definecolor{vermell}{rgb}{0.75,0.00,0.00}       %vermell
+\definecolor{blau}{rgb}{0.16,0.24,0.64}       %blau
+\definecolor{verd}{rgb}{0.18,0.58,0.08}       %verd
+\definecolor{linkcolor}{rgb}{0,0,0.42}        %color de l'enllaç
+\usepackage{blindtext}
+
+%------------ paquets addicionals --------------
+%%%%%%%%%%%%%%%%%%%%%%%% millores d'edició de versions
+\usepackage[catalan,shadow,textwidth=1cm]{todonotes}
+
+\usepackage{pdfpages}
+%%%%%%%%%%%%% llistes niuades ------------------
+
+%%% https://tex.stackexchange.com/questions/450272/resume-enumeration-in-sublist-with-enumitem-package/450274#450274
+\usepackage[shortlabels]{enumitem}
+\newlist{innerenumerate}{enumerate}{1}
+\setlist*[innerenumerate]{label=\textbf{Acció\ \arabic*}, resume=inner,align=left}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{xspace}                            % Espai automàtic després de macros
+\usepackage{booktabs,array}                    % Taules agradables
+\usepackage{ctable}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{colortbl}                          % paquet per acolorir taules
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{mdwlist}							%paquet per comprimir llistes
+%\usepackage{adjustbox}
+\usepackage{supertabular}
+%\usepackage{xtab}
+
+\usepackage[catalan]{varioref}
+%\usepackage{textcomp}                         % senyal addicional
+%\usepackage{varwidth}                         % per millorar el medi ambient
+\usepackage{calc}                              % per càlculs
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{eso-pic}                           % paquet per clavar imatges a pàgines
+
+
+%--------------------------- Formatatge KOMA---------------------------
+
+%\addtokomafont{pagenumber}{\color{gray}}	             % dóna color als text del peu (números de pàgina+text)
+%\addtokomafont{pagehead}{\normalfont\sffamily}          % dóna color al text de l'encapçalament
+\addtokomafont{section}{\Large\sffamily\color{blau}}	 % dóna color a les Seccions
+\addtokomafont{subsection}{\large\sffamily\color{blue}}	 % dóna color a les subseccions
+%\addtokomafont{pagehead}{\normalfont\sffamily\small\color{gray}}   % fa que l'encapçalament/peu de la pàgina sigui sans serif i petit i no itàlica
+\addtokomafont{subsubsection}{\color{blue}}
+
+
+\addtokomafont{caption}{\footnotesize\itshape}
+\addtokomafont{captionlabel}{\upshape\bfseries}
+\addtokomafont{descriptionlabel}{\rmfamily}
+\setcapindent{1em}
+\deffootnote[1.2em]{1.7em}{1em}{\makebox[1.2em][l]{\thefootnotemark}}
+%\deffootnote{2.25em}{1.75em}{\thefootnotemark\enspace}
+
+%%% titulars de secció
+% \renewcommand*{\othersectionlevelsformat}[1]{%
+%   \makebox[22pt][l]{\csname the#1\endcsname\autodot}\enskip}
+\reversemarginpar
+%%aquesta redefinició fa que els números de secció surtin per l'esquerra del text
+\renewcommand*{\othersectionlevelsformat}[1]{%
+\makebox[0pt][r]{\csname the#1\endcsname\autodot\enskip}}
+
+%%%% encapçalaments i peus
+\usepackage{lastpage}                        % fa el recompte de pàgines del document
+\usepackage[automark]{scrpage2}  %automark posa automàticament la marca que correspon %headsepline dibuixa una línia
+\clearscrheadfoot
+\pagestyle{scrheadings}
+% fem servir el \pagestyle{scrheadings}
+\setlength{\headheight}{25pt}			     % assigna 25 punts a l'alçada de la capçalera per fer espai
+\setheadsepline{.4pt}				            		% crea una línia sota la capçalera
+%\addtokomafont{headtopline}{\color{lightgray}}			% dóna color gris a la línia sobre capçalera
+\addtokomafont{headsepline}{\color{lightgray}}			% dóna color gris a la línia sota capçalera
+
+%%% per treure el número de capítol/secció només a l'encapçalament
+%\renewcommand*{\chaptermarkformat}{}
+\renewcommand*{\sectionmarkformat}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% per canviar de color els números de secció amb versions noves de Koma
+% http://tex.stackexchange.com/questions/252627/section-numbers-colored
+%\renewcommand*{\sectionformat}{%
+%  \textcolor{gris}{\thesection}\autodot\enskip%
+%}
+%\renewcommand*{\subsectionformat}{%
+%  \textcolor{LightSteelBlue}{\thesubsection}\autodot\enskip%
+%}
+% amb la versió vella de Koma:
+%\renewcommand*{\othersectionlevelsformat}[3]{%
+%\textcolor{gris}
+%{#3}\autodot\enskip}
+
+%%%%%%%%%%%%%%%%%%%%%%% variables
+\newcommand{\versio}{1}
+\newcommand{\codi}{PlaCom}
+\newcommand{\autor}{Joan Queralt Gil}
+\newcommand{\curs}{2018-19}
+\newcommand{\titol}{Pla de comunicació del centre}
+
+%%%%%%%%%%%%%%%% Capçaleres i peus%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fem servir el \pagestyle{scrheadings}
+\ohead{}                                                     %capçalera exterior
+\chead{\headmark}                                                              %capçalera centre
+%peu centre:
+\cfoot[
+\begin{center}\footnotesize\sffamily
+\renewcommand{\arraystretch}{1.75}%
+\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
+\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}}  & Versió: \versio  & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}}  \\ \cline{2-2}\cline{4-4}
+& Codi: \codi   &  {\normalsize{del centre}}  & {curs \curs}\\ \hline
+\end{tabular}
+
+{\color{gray}Assegureu-vos que aquest document és vigent.} Consulteu el web.
+\end{center}
+]
+{
+\begin{center}\footnotesize\sffamily
+\renewcommand{\arraystretch}{1.75}% \begin{tabular}{|p{1.2cm}|p{2cm}|p{7.5cm}|p{2.2cm}|} \hline
+\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
+\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}}  & Versió: \versio  & {\normalsize{Pla de comunicació del centre}} & Pàgina {\thepage} de  {\pageref{LastPage}}  \\ \cline{2-2}\cline{4-4}
+& Codi: \codi   &  {\normalsize{del centre}}  & {curs \curs}\\ \hline
+\end{tabular}
+
+{\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
+\end{center}}
+%\ofoot{\normalfont\normalcolor{\thepage\ |\  \pageref{LastPage}}}      %peu exterior
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% configuració d'hyperref per pdf
+\usepackage{hyperref}
+\def\figureautorefname{Figura}
+\def\tableautorefname{Taula}
+
+\pdfstringdef{\Titol}{\titol}
+\pdfstringdef{\Tema}{Pla de comunicació del centre}%
+\pdfstringdef{\Claus}{Pla, comuniació, programació, IOC, responsables, tasques}%
+
+\hypersetup{%
+pdftitle=\Titol,%
+pdfsubject=\Tema,%
+pdfkeywords=\Claus,%
+pdfauthor={\copyright 2019 Joan Queralt},%
+%bookmarksopen=true, %finestreta de marcadors oberta quan s'obre el document
+%backref=true,
+bookmarksopenlevel=2,
+linktocpage=true,
+urlcolor=linkcolor,
+citecolor=linkcolor,
+linkcolor=linkcolor,
+colorlinks=true,
+}
+
+
+\usepackage[
+open,
+openlevel=3,
+atend
+]{bookmark}[2016/05/17]
+\bookmarksetup{color=blue}
+
+\usepackage[stretch=10]{microtype}
+
+\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%% portada %%%%%%%%%%%%%%%%%%%
+
+\input{portada.tex} % imports the commands from filename.tex into the target file; it's equivalent to typing all the commands
+
+%%% pàgina de l'Índex %%%%%%%%
+
+\thispagestyle{empty}
+\pdfbookmark[1]{Índex}{toc}
+\setcounter{tocdepth}{4}
+\tableofcontents
+
+%\clearpage
+%\listoftodos %activar quan l'edició del doc
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% primera pàgina del text
+\pagestyle{scrheadings}
+
+
+\section{section name}\label{sec:intro}
+
+
+
+\chapter{Gestió del document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control de canvis
+
+\section{Control de canvis}
+
+Versió 0: redactat inicial
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Gestió del document
+\section{Gestió del document}\label{sec:gestiodoc}
+
+
+\begin{center}\scriptsize\sffamily
+\renewcommand{\arraystretch}{1.75}%
+\begin{tabular}{lllp{4cm}}\hline
+              & Elaborat per  & Revisat per   & Aprovat per\\ \hline
+Nom i cognoms & Joan Queralt & Mercè Vidal & Joan Queralt\\
+Càrrec        & Director & Coordinació de Qualitat & Director\\
+Data          & 11/12/2018 & 18/12/2018 & 19/12/2018\\\hline
+Signatura     &   &   &
+\end{tabular}
+\end{center}
+
+\end{document}
