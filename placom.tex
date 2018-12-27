@@ -1,17 +1,17 @@
 \documentclass[fontsize=10pt,%
-paper=a4,%
-%BCOR=12mm,% marge per relligar
-%DIV=calc,%
-DIV=14,%
-twoside,%per defecte 1 cara
-pagesize=auto,%
-%parskip=full,% no sagna paràgrafs però dóna més espai entre paràgrafs
-parskip=half,
-%parskip=false,
-captions=tableheading,%
-numbers=noenddot,%
-toc=graduated%
-%toc=flat %toc=flat,%índex amb ítems sense sagnar
+ 4paper=a4,%
+ 4%BCOR=12mm,% marge per relligar
+ 4%DIV=calc,%
+ 4DIV=14,%
+ 4twoside,%per defecte 1 cara
+ 4pagesize=auto,%
+ 4%parskip=full,% no sagna paràgrafs però dóna més espai entre paràgrafs
+ 4parskip=half,
+ 4%parskip=false,
+ 4captions=tableheading,%
+ 4numbers=noenddot,%
+ 4toc=graduated%
+ 4%toc=flat %toc=flat,%índex amb ítems sense sagnar
 ]{scrartcl}
 %]{scrreprt}
 %--------------- configuració bàsica -----------------
@@ -41,11 +41,11 @@ toc=graduated%
 %\usepackage{ifsym}                            % paquet per fer lletra de calculadora
 %%% colors
 \usepackage[pdftex,%					paquet per fer aparèixer els colors
-dvipdfm,%
-dvipsnames,%
-svgnames,%
-usenames,%
-table]{xcolor}
+ 4dvipdfm,%
+ 4dvipsnames,%
+ 4svgnames,%
+ 4usenames,%
+ 4table]{xcolor}
 %\usepackage[dvipsnames]{color}  % paquet de 68 colors
 \definecolor{gris}{gray}{0.45}                   %gris
 \definecolor{vermell}{rgb}{0.75,0.00,0.00}       %vermell
@@ -115,7 +115,7 @@ table]{xcolor}
 \reversemarginpar
 %%aquesta redefinició fa que els números de secció surtin per l'esquerra del text
 \renewcommand*{\othersectionlevelsformat}[1]{%
-\makebox[0pt][r]{\csname the#1\endcsname\autodot\enskip}}
+ 4\makebox[0pt][r]{\csname the#1\endcsname\autodot\enskip}}
 
 %%%% encapçalaments i peus
 \usepackage{lastpage}                        % fa el recompte de pàgines del document
@@ -158,26 +158,26 @@ table]{xcolor}
 \chead{\headmark}                                                              %capçalera centre
 %peu centre:
 \cfoot[
-\begin{center}\footnotesize\sffamily
-\renewcommand{\arraystretch}{1.75}%
-\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
-\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}}  & Versió: \versio  & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}}  \\ \cline{2-2}\cline{4-4}
-& Codi: \codi   &  {\normalsize{del centre}}  & {curs \curs}\\ \hline
-\end{tabular}
-
-{\color{gray}Assegureu-vos que aquest document és vigent.} Consulteu el web.
-\end{center}
+ 4\begin{center}\footnotesize\sffamily
+ 4 4\renewcommand{\arraystretch}{1.75}%
+ 4 4\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
+ 4 4 4\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4}
+ 4 4 4                                                                  & Codi: \codi     & {\normalsize{del centre}}         & {curs \curs}                               \\ \hline
+ 4 4\end{tabular}
+ 4 4
+ 4 4{\color{gray}Assegureu-vos que aquest document és vigent.} Consulteu el web.
+ 4\end{center}
 ]
 {
-\begin{center}\footnotesize\sffamily
-\renewcommand{\arraystretch}{1.75}% \begin{tabular}{|p{1.2cm}|p{2cm}|p{7.5cm}|p{2.2cm}|} \hline
-\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
-\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}}  & Versió: \versio  & {\normalsize{Pla de comunicació del centre}} & Pàgina {\thepage} de  {\pageref{LastPage}}  \\ \cline{2-2}\cline{4-4}
-& Codi: \codi   &  {\normalsize{del centre}}  & {curs \curs}\\ \hline
-\end{tabular}
-
-{\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
-\end{center}}
+ 4\begin{center}\footnotesize\sffamily
+ 4 4\renewcommand{\arraystretch}{1.75}% \begin{tabular}{|p{1.2cm}|p{2cm}|p{7.5cm}|p{2.2cm}|} \hline
+ 4 4\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
+ 4 4 4\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació del centre}} & Pàgina {\thepage} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4}
+ 4 4 4                                                                  & Codi: \codi     & {\normalsize{del centre}}                    & {curs \curs}                               \\ \hline
+ 4 4\end{tabular}
+ 4 4
+ 4 4{\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
+ 4\end{center}}
 %\ofoot{\normalfont\normalcolor{\thepage\ |\  \pageref{LastPage}}}      %peu exterior
 
 
@@ -192,25 +192,25 @@ table]{xcolor}
 \pdfstringdef{\Claus}{Pla, comuniació, programació, IOC, responsables, tasques}%
 
 \hypersetup{%
-pdftitle=\Titol,%
-pdfsubject=\Tema,%
-pdfkeywords=\Claus,%
-pdfauthor={\copyright 2019 Joan Queralt},%
-%bookmarksopen=true, %finestreta de marcadors oberta quan s'obre el document
-%backref=true,
-bookmarksopenlevel=2,
-linktocpage=true,
-urlcolor=linkcolor,
-citecolor=linkcolor,
-linkcolor=linkcolor,
-colorlinks=true,
+ 4pdftitle=\Titol,%
+ 4pdfsubject=\Tema,%
+ 4pdfkeywords=\Claus,%
+ 4pdfauthor={\copyright 2019 Joan Queralt},%
+ 4%bookmarksopen=true, %finestreta de marcadors oberta quan s'obre el document
+ 4%backref=true,
+ 4bookmarksopenlevel=2,
+ 4linktocpage=true,
+ 4urlcolor=linkcolor,
+ 4citecolor=linkcolor,
+ 4linkcolor=linkcolor,
+ 4colorlinks=true,
 }
 
 
 \usepackage[
-open,
-openlevel=3,
-atend
+ 4open,
+ 4openlevel=3,
+ 4atend
 ]{bookmark}[2016/05/17]
 \bookmarksetup{color=blue}
 
@@ -243,6 +243,12 @@ atend
 \section{Introducció}\label{sec:intro}
 
 Objectius del PlaCom
+
+Aquest Pla de comunicació de l'IOC recull i explica com s'ha d'organitzar la comunicació de la informació al centre. L'objectiu és acabar establint una comunicació fluïda, eficient i eficaç entre el centre i la comunitat educativa, tant la interna com l'externa.
+
+El Pla de comunicació depèn del procés PE04 Gestionar la informació, la comunicació i el coneixement.
+
+En el darrer anàliso DAFO realitzat sobre el centre un dels aspectes més destacables que en sortí va ser les oportunitats que se'ns oferirrien amb una millora de la fluïdesa de la comunicació dins de la pròpia organització, però sobretot per donar a conèixer a l'ecterior tpot allò que estem fent i podem fer a l'IOC.
 
 \section{Eixos de comunicació}\label{sec:eixos}
 
@@ -278,14 +284,14 @@ Versió 0: redactat inicial
 
 
 \begin{center}\scriptsize\sffamily
-\renewcommand{\arraystretch}{1.75}%
-\begin{tabular}{lllp{4cm}}\hline
-              & Elaborat per  & Revisat per   & Aprovat per\\ \hline
-Nom i cognoms & Joan Queralt & Mercè Vidal & Joan Queralt\\
-Càrrec        & Director & Coordinació de Qualitat & Director\\
-Data          & 11/12/2018 & 18/12/2018 & 19/12/2018\\\hline
-Signatura     &   &   &
-\end{tabular}
+ 4\renewcommand{\arraystretch}{1.75}%
+ 4\begin{tabular}{lllp{4cm}}\hline
+ 4 4              & Elaborat per & Revisat per             & Aprovat per  \\ \hline
+ 4 4Nom i cognoms & Joan Queralt & Mercè Vidal             & Joan Queralt \\
+ 4 4Càrrec        & Director     & Coordinació de Qualitat & Director     \\
+ 4 4Data          & 11/12/2018   & 18/12/2018              & 19/12/2018   \\\hline
+ 4 4Signatura     &              &                         &              
+ 4\end{tabular}
 \end{center}
 
 \end{document}
