@@ -1,0 +1,59 @@
+%----------------------------- Pàgina del títol ----------------------------
+\begin{titlepage}\sffamily
+%\pdfbookmark[level]{bookmark text}{anchor}
+\pdfbookmark[1]{Títol}{tit} %situa un punt de referència pels marcadors del document PDF
+
+\begin{center}
+ 
+\begin{minipage}{.8\linewidth}
+\raggedright
+%\raggedleft%
+\noindent
+% \makebox[0cm][l]{\scalebox{3}[-3]{\textcolor{blue!30}{Boxes}}}Boxes
+{\color{blau}%\rule{\linewidth}{1pt}%
+%\vspace{2\baselineskip}
+\vspace{8\baselineskip}
+{\Huge\bfseries
+%Pla de comunicació\\%[1ex]
+
+%del centre\\[3ex]
+
+{\fontsize{60}{70}\selectfont Pla de comunicació}\\[6ex]
+
+\curs \\
+\vspace{2\baselineskip}
+\noindent
+%\rule{\linewidth}{1pt}
+}}%
+\end{minipage}
+\end{center}
+
+
+
+\vspace{4\baselineskip}
+%\raggedleft
+\raggedright
+\vspace{\baselineskip}
+\begin{center}
+\let\footnoterule\relax
+\begin{minipage}{.8\linewidth}\large
+%Text a minipage
+Codi: \codi\\
+Versió: \versio\\
+Curs:  \curs \\[3ex]
+{\color{gray}\small{Assegureu-vos que aquest document és vigent. Consulteu el web.}} \\
+\end{minipage}
+\end{center}
+\vfill
+\bigskip
+%\makebox[0cm][l]{\scalebox{1}[-1]{\textcolor{blue!30}{Boxes}}}Boxes
+\AddToShipoutPicture*
+{%
+\put(100,100)%
+{\includegraphics[scale=2]{logo_IOC_blanc.jpg}}%[scale=0.2]
+}
+
+\end{titlepage}
+
+%------------------------ Final de la pàgina del títol ----------------------------
+\clearpage
