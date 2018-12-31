@@ -3,7 +3,7 @@ paper=a4,%
 %BCOR=12mm,% marge per relligar
 %DIV=calc,%
 DIV=14,%
-twoside,%per defecte 1 cara
+%twoside,%per defecte 1 cara
 pagesize=auto,%
 %parskip=full,% no sagna paràgrafs però dóna més espai entre paràgrafs
 parskip=half,
@@ -118,19 +118,21 @@ table]{xcolor}
 \makebox[0pt][r]{\csname the#1\endcsname\autodot\enskip}}
 
 %%%% encapçalaments i peus
+
 \usepackage{lastpage}                        % fa el recompte de pàgines del document
 \usepackage[automark]{scrpage2}  %automark posa automàticament la marca que correspon %headsepline dibuixa una línia
 \clearscrheadfoot
 \pagestyle{scrheadings}
 % fem servir el \pagestyle{scrheadings}
-\setlength{\headheight}{25pt}			     % assigna 25 punts a l'alçada de la capçalera per fer espai
-\setheadsepline{.4pt}				            		% crea una línia sota la capçalera
-%\addtokomafont{headtopline}{\color{lightgray}}			% dóna color gris a la línia sobre capçalera
+\setlength{\headheight}{25pt}% assigna 25 punts a l'alçada de la capçalera per fer espai
+\setheadsepline{.4pt}% crea una línia sota la capçalera
+%\addtokomafont{headtopline}{\color{lightgray}}% dóna color gris a la línia sobre capçalera
 \addtokomafont{headsepline}{\color{lightgray}}			% dóna color gris a la línia sota capçalera
 
 %%% per treure el número de capítol/secció només a l'encapçalament
 %\renewcommand*{\chaptermarkformat}{}
-\renewcommand*{\sectionmarkformat}{}
+%\renewcommand*{\sectionmarkformat}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % per canviar de color els números de secció amb versions noves de Koma
 % http://tex.stackexchange.com/questions/252627/section-numbers-colored
@@ -245,6 +247,25 @@ El Pla de comunicació depèn del procés estratègic \textbf{PE04 Gestionar la 
 
 En el darrer anàlisi DAFO realitzat sobre el centre, un dels aspectes més destacables que en sortí va ser les oportunitats que s'obririen amb una millora de la fluïdesa de la comunicació dins de la pròpia organització, però sobretot per donar a conèixer a l'exterior tot allò que estem fent i podem fer a l'IOC.
 
+Hem analitzat les necessitats de comunicació de la organització amb cadascun dels grups d'interès per elaborar un pla de comunicació que s'hi adapti. A l'hora
+d'establir aquest pla, s'han adequat els canals de comunicació al col·lectiu al qual s'adreça el missatge i activar els més efectius perquè sigui accessible a tothom.
+
+Atès que l'IOC transmet missatges de moltes formes i per molts canals, ha de ser curós amb la imatge corporativa que transmet (ordre, neteja, identificació,
+coherència, compromisos, resultats, ètica i estètica) perquè sigui la que realment persegueix el centre.
+
+Disposem d'un logo corporatiu i d'una \textit{Guia d'estil} per les seves comunicacions internes i externes.
+
+L'IOC determina en aquest Pla les comunicacions internes i externes relacionades amb el sistema de gestió de qualitat. Inclou:
+
+\begin{itemize}
+\item  què es comunicarà: \textit{Missatge}
+\item  qui comunica: \textit{Responsable}
+\item  a qui es comunica: \textit{Destinataris}
+\item  com es comunica: \textit{Canal}
+\item  quan es comunicarà: \textit{Moment}
+\item  on queda registrat: \textit{Registre}
+\end{itemize}
+
 \section{Eixos de comunicació}\label{sec:eixos}
 
 Destinataris
@@ -254,11 +275,11 @@ Destinataris
 Un dels punts de millora que hem d'abordar com a centre de manera prioritària és 
 donar a conèixer a la comunitat l'existència i les activitats de l'IOC. Tenim un seguit d'objectius i accions al pla de qualitat relacionats amb aquest punt i agrupats en l'Eix de Millora de la projecció de la imatge de l'IOC. Per això cal parar-hi força atenció i 
 
-\begin{center}
-\small
+%\begin{center}
+\small{
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{3cm}p{1.5cm}}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
 \hline
 \textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
 \hline \endfirsthead
@@ -268,7 +289,9 @@ donar a conèixer a la comunitat l'existència i les activitats de l'IOC. Tenim 
 Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
 Notícies pròpies & Direcció & Comunitat & Portal web & Quan es produeixen & Portal\\
 Notícies pròpies & Direcció & Comunitat & Twitter & Quan es produeixen & @ioc\\
-Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & @miniops\_ioc
+Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & @gesalioc
+
+@miniops\_ioc
 
 @ErasmusIoc
 
@@ -278,17 +301,17 @@ Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & 
 
 @dep\_prp\_IOC\\
 \end{longtable}
-\end{center}
+}%tanca small
 
 \subsection{Difusió externa}
 
 \todo[inline]{revisar redactat}La difusió externa de l'existència i les activitats de l'IOC és un puntal sobre el que s'assentarà l'Eix de Millora de la projecció de la imatge de l'IOC
 
-\begin{center}
-\small
+%\begin{center}
+\small{
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{3cm}p{1.5cm}}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
 \hline
 \textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
 \hline \endfirsthead
@@ -296,15 +319,64 @@ Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & 
 \textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
 \hline \endhead
 Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
-
 \end{longtable}
-\end{center}
+}%tanca small
+%\end{center}
+
 
 \subsection{Comunicació interna}
 
+%\begin{center}
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endhead
+Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+\end{longtable}
+}%tanca small
+%\end{center}
+
 \subsection{Participació en xarxes}
 
+%\begin{center}
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endhead
+Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+\end{longtable}
+}%tanca small
+%\end{center}
+
 \subsection{Comunicació en temps de risc}
+
+%\begin{center}
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endhead
+Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+\end{longtable}
+}%tanca small
+%\end{center}
 
 \section{Recursos}\label{sec:recursos}
 
@@ -319,7 +391,9 @@ Calendari i indicadors
 
 \section{Control de canvis}
 
-Versió 0: redactat inicial
+Versió 00. presentada per a la seva revisió i aprovació al novembre 2016.
+
+Versió 01. S'ha canviat el nom Procediment per Pla. S'han afegit els eixos de domunicació
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Gestió del document
 \section{Gestió del document}\label{sec:gestiodoc}
@@ -331,9 +405,27 @@ Versió 0: redactat inicial
               & Elaborat per & Revisat per             & Aprovat per  \\ \hline
 Nom i cognoms & Joan Queralt & Mercè Vidal             & Joan Queralt \\
 Càrrec        & Director     & Coordinació de Qualitat & Director     \\
-Data          & 11/12/2018   & 18/12/2018              & 19/12/2018   \\\hline
+Data          & 08/01/2019   & 08/01/2019              & 08/01/2019   \\\hline
 Signatura     &              &                         &              
 \end{tabular}
 \end{center}
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\hline \endhead
+Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+\end{longtable}
+\end{center}
