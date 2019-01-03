@@ -92,6 +92,14 @@ table]{xcolor}
 \usepackage{eso-pic}                           % paquet per clavar imatges a pàgines
 
 
+%%%%%%%%%%%%%%%%%%%%%%% variables
+\newcommand{\versio}{1}
+\newcommand{\codi}{PlaCom}
+\newcommand{\autor}{Joan Queralt Gil}
+\newcommand{\curs}{2018-19}
+\newcommand{\titol}{Pla de comunicació del centre}
+
+
 %--------------------------- Formatatge KOMA---------------------------
 
 %\addtokomafont{pagenumber}{\color{gray}}	             % dóna color als text del peu (números de pàgina+text)
@@ -117,17 +125,17 @@ table]{xcolor}
 \renewcommand*{\othersectionlevelsformat}[1]{%
 \makebox[0pt][r]{\csname the#1\endcsname\autodot\enskip}}
 
-%%%% encapçalaments i peus
+%%%% encapçalaments i peus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage[automark]{scrlayer-scrpage} %automark posa automàticament la marca que correspon
+\automark[subsection]{section}
 \usepackage{lastpage}                        % fa el recompte de pàgines del document
-\usepackage[automark]{scrpage2}  %automark posa automàticament la marca que correspon %headsepline dibuixa una línia
 \clearscrheadfoot
 \pagestyle{scrheadings}
 % fem servir el \pagestyle{scrheadings}
 \setlength{\headheight}{25pt}% assigna 25 punts a l'alçada de la capçalera per fer espai
 \setheadsepline{.4pt}% crea una línia sota la capçalera
-%\addtokomafont{headtopline}{\color{lightgray}}% dóna color gris a la línia sobre capçalera
-\addtokomafont{headsepline}{\color{lightgray}}			% dóna color gris a la línia sota capçalera
+\addtokomafont{headsepline}{\color{lightgray}}	% dóna color gris a la línia sota capçalera
 
 %%% per treure el número de capítol/secció només a l'encapçalament
 %\renewcommand*{\chaptermarkformat}{}
@@ -147,12 +155,7 @@ table]{xcolor}
 %\textcolor{gris}
 %{#3}\autodot\enskip}
 
-%%%%%%%%%%%%%%%%%%%%%%% variables
-\newcommand{\versio}{1}
-\newcommand{\codi}{PlaCom}
-\newcommand{\autor}{Joan Queralt Gil}
-\newcommand{\curs}{2018-19}
-\newcommand{\titol}{Pla de comunicació del centre}
+
 
 %%%%%%%%%%%%%%%% Capçaleres i peus%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % fem servir el \pagestyle{scrheadings}
@@ -174,7 +177,6 @@ table]{xcolor}
 \begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
 \multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4} & Codi: \codi     & {\normalsize{del centre}}                    & {curs \curs}\\ \hline
 \end{tabular}
-
 {\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
 \end{center}}
 %\ofoot{\normalfont\normalcolor{\thepage\ |\  \pageref{LastPage}}}      %peu exterior
@@ -255,7 +257,7 @@ coherència, compromisos, resultats, ètica i estètica) perquè sigui la que re
 
 Disposem d'un logo corporatiu i d'una \textit{Guia d'estil} per les seves comunicacions internes i externes.
 
-L'IOC determina en aquest Pla les comunicacions internes i externes relacionades amb el sistema de gestió de qualitat. Inclou:
+Finalment, la norma ISO 9001:2015 en l'apartat 7.4 de comunicació ens indica la necessitat que l'IOC determini en aquest Pla les comunicacions internes i externes relacionades amb el sistema de gestió de qualitat. Per això inclou:
 
 \begin{itemize}
 \item  què es comunicarà: \textit{Missatge}
@@ -268,28 +270,98 @@ L'IOC determina en aquest Pla les comunicacions internes i externes relacionades
 
 \section{Eixos de comunicació}\label{sec:eixos}
 
-Destinataris
-
 \subsection{Imatge de centre}
 
-Un dels punts de millora que hem d'abordar com a centre de manera prioritària és 
-donar a conèixer a la comunitat l'existència i les activitats de l'IOC. Tenim un seguit d'objectius i accions al pla de qualitat relacionats amb aquest punt i agrupats en l'Eix de Millora de la projecció de la imatge de l'IOC. Per això cal parar-hi força atenció i 
+Un dels punts de millora que hem d'abordar com a centre de manera prioritària és
+donar a conèixer a la comunitat l'existència i les activitats de l'IOC.
 
-%\begin{center}
+Tenim un seguit d'objectius i accions al pla de qualitat relacionats amb aquest punt i agrupats en l'Eix de Millora de la projecció de la imatge de l'IOC. Per això cal parar-hi força atenció i dedicar-li una cura especial.
+
+
 \small{
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}                          & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}     & \textbf{Registre} \\
 \hline \endfirsthead
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}                          & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}     & \textbf{Registre} \\
 \hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
-Notícies pròpies & Direcció & Comunitat & Portal web & Quan es produeixen & Portal\\
-Notícies pròpies & Direcció & Comunitat & Twitter & Quan es produeixen & @ioc\\
-Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & @gesalioc
+Informació general sobre el centre         & Equip directiu       & Comunitat             & Portal web     & Sempre              & Portal            \\
+Notícies pròpies                           & Direcció             & Comunitat             & Portal web     & Quan es produeixen  & Portal            \\
+Notícies pròpies                           & Direcció             & Comunitat             & Twitter        & Quan es produeixen  & @ioc              \\
+Documentació estratègica i d'interès       & Direcció             & Comunitat             & Portal web     & Sempre              & Portal            \\
+Projectes en els quals participa o impulsa & Equip directiu       & Comunitat             & Portal web     & Quan hi hagi canvis & Portal            \\
+\end{longtable}
+}%tanca small
+
+\subsection{Difusió externa}
+
+
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}                   & \textbf{Responsable}   & \textbf{Destinataris}     & \textbf{Canal} & \textbf{Moment}          & \textbf{Registre}   \\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}                   & \textbf{Responsable}   & \textbf{Destinataris}     & \textbf{Canal} & \textbf{Moment}          & \textbf{Registre}   \\
+\hline \endhead
+Informació sobre l'oferta formativa & Equip directiu         & Comunitat                 & Portal web     & Sempre                   & Portal              \\
+Recursos i material per l'estudi    & Equip directiu         & Estudiants                & Portal web     & Sempre                   & Portal              \\
+Calendaris d'inscripció             & Equip directiu         & Comunitat                 & Portal web     & Quan es publiqui al DOGC & Portal              \\
+Requisits de matrícula              & Equip directiu         & Comunitat                 & Portal web     & Quan canviïn             & Portal              \\
+Incidències del servei              & Equip directiu         & Comunitat                 & Portal web     & Quan s'esdevinguin       & Portal              \\
+Licitacions de serveis              & Direcció               & Comunitat                 & Portal web     & Sempre                   & Portal              \\
+Reunions amb centres de suport      & Direccions acadèmiques & Responsables dels centres & Fòrum          & Quan correspongui        & Convocatòria i acta \\
+\end{longtable}
+}%tanca small
+
+
+
+\subsection{Comunicació interna}
+
+
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge}                        & \textbf{Responsable}     & \textbf{Destinataris}                    & \textbf{Canal} & \textbf{Moment}      & \textbf{Registre}                                          \\
+\hline \endfirsthead
+\hline
+\textbf{Missatge}                        & \textbf{Responsable}     & \textbf{Destinataris}                    & \textbf{Canal} & \textbf{Moment}      & \textbf{Registre}                                          \\
+\hline \endhead
+Informació externa per correu postal     & Equip directiu           & Persones interessades                    & Calaix         & Sempre que arribi    & Cada servei                                                \\
+Informació externa per correu electrònic & Equip directiu           & Persones interessades                    & e-Bústia       & Sempre que arribi    & Correu electrònic                                          \\
+Convocatòria de Claustre                 & Direcció                 & Professorat                              & Fòrum          & Sempre que n'hi hagi & Convocatòria i acta                                        \\
+Reunió d'Equip directiu                  & Direcció                 & Equip directiu                           & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Reunió Comissió de qualitat              & Direcció                 & Equip directiu i coordinació de qualitat & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Reunió de revisió del sistema            & Direcció                 & Comissió de qualitat                     & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Reunions d'Equips docents                & Direccions acadèmiques   & Professorat corresponent                 & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Reunions de coordinacions                & Direccions acadèmiques   & Professorat corresponent                 & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Reunions de tutors                       & Coordinacions de tutoria & Professorat corresponent                 & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
+Juntes d'avaluació                       & Direccions acadèmiques   & Professorat corresponent                 & Fòrum          & A final de període   & Convocatòria, informes dels centres de suport (GES) i acta \\
+\end{longtable}
+}%tanca small
+
+
+\subsection{Participació en xarxes}
+
+
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
+\hline
+\textbf{Missatge} & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}    & \textbf{Registre} \\
+\hline \endfirsthead
+\hline
+\textbf{Missatge} & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}    & \textbf{Registre} \\
+\hline \endhead
+Notícies pròpies  & Coordinacions        & Comunitat             & Twitter        & Quan es produeixen & @gesalioc
 
 @miniops\_ioc
 
@@ -299,101 +371,121 @@ Notícies pròpies & Coordinacions & Comunitat & Twitter & Quan es produeixen & 
 
 @IOC\_PACFGS\_MA
 
-@dep\_prp\_IOC\\
+@dep\_prp\_IOC                                                                                                             \\
 \end{longtable}
 }%tanca small
 
-\subsection{Difusió externa}
 
-\todo[inline]{revisar redactat}La difusió externa de l'existència i les activitats de l'IOC és un puntal sobre el que s'assentarà l'Eix de Millora de la projecció de la imatge de l'IOC
+\subsection{Comunicació en moments de crisi}
 
-%\begin{center}
+En situacions complexes i urgents haurem d'establir quines actuacions es duran a terme que contribueixin a millorar la situació, sempre amb calma, transparència i organització. L'objectiu és mirar d'estalviar queixes, rumors i
+males interpretacions de situacions que poden generar conflicte i anticipar-ne les solucions.
+
+La informació que s'ha de donar en moments així ha de ser seriosa, transparent, verídica i clara. El silenci mai no és rendible, cal informar i cal fer-ho des del primer moment però, sobretot, cal que la informació sigui rigorosa, intel·ligible per part dels receptors, transparent i sobretot verídica. Potser no podrem explicar tota la veritat, però allò que diguem ha de ser cert.
+
+Qui ha de donar resposta en moments així és l'equip directiu del centre, i
+serà la Direcció qui ha de comandar la comunicació de les crisis.
+
+El/la portaveu és una figura clau en la gestió d'una crisi. Ha de transmetre
+confiança, proximitat, seguretat i credibilitat. Saber qui ha de parlar, què ha
+de dir i quan ha de dir-ho és essencial per transmetre adequadament els
+missatges durant una crisi.
+
+
+
 \small{
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}      & \textbf{Registre} \\
 \hline \endfirsthead
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment}      & \textbf{Registre} \\
 \hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+Caiguda del servei & Direcció             & Comunitat             & Portal web     & Sempre que succeeixi & Portal            \\
+Caiguda del servei & Direcció             & Equip directiu        & Correu xtec
+
+whatsapp
+
+telèfon particular
+                   & Sempre que succeeixi & El que correspongui                                                               \\
+Endarreriment del pagament del professoat col·laborador & Direcció & Prof. col·laborador & Fòrum de les Sales & Quan es produeixi & Entrada al fòrum\\
 \end{longtable}
 }%tanca small
-%\end{center}
 
 
-\subsection{Comunicació interna}
+\section{Recursos i infraestructures}\label{sec:recursos}
 
-%\begin{center}
-\small{
-\setlength{\tabcolsep}{10pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endfirsthead
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
-\end{longtable}
-}%tanca small
-%\end{center}
+\subsection{Canals de comunicació}
 
-\subsection{Participació en xarxes}
+Correu corporatiu xtec i eines Google.
 
-%\begin{center}
-\small{
-\setlength{\tabcolsep}{10pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endfirsthead
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
-\end{longtable}
-}%tanca small
-%\end{center}
+Campus virtual basat en Moodle i Mahara.
 
-\subsection{Comunicació en temps de risc}
+Portal web de comunicació amb la comunitat.
 
-%\begin{center}
-\small{
-\setlength{\tabcolsep}{10pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endfirsthead
-\hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
-\hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
-\end{longtable}
-}%tanca small
-%\end{center}
+Xarxes socials: Twitter, Linkedin,\dots
 
-\section{Recursos}\label{sec:recursos}
+\subsection{Infraestructures}
 
-Canals de comunicació
+El funcionament de l'IOC està basat en unes infraestructures que li donen suport en el propi funcionament així com en la comunicació interna i externa, com ara són:
+
+\begin{itemize}
+\item Xarxa informàtica cablejada i cobertura wifi a totes les plantes de la seu
+\item Correu corporatiu de la xarxa Xtec (*@xtec.cat)
+\item En bústies externes correu corporatiu del centre (*@ioc.cat)
+\item Moodle com a entorn virtual d'aprenentatge
+\item Mahara com a base pel portafolis digital
+\item Joomla com a base pel portal web ioc.xtec.cat
+\item Dokuwiki per generar i publicar materials formatius
+\item Pàgines consultives (web del departament d‟Ensenyament):
+      \begin{itemize}
+      \item XTEC: xtec.cat
+      \item GENCAT: gencat.cat/educacio
+      \item EACAT: idp.eacat.net
+      \end{itemize}
+\end{itemize}
 
 \section{Execució i avaluació}\label{sec:execiaval}
 
-Calendari i indicadors
+L'avaluació del Pla de Comunicació té com a objectiu mesurar la percepció de
+millora en la comunicació per part dels usuaris (professors, professors col·laboradors, PAS o centres de suport.
+
+Utilitzarem diferents indicadors:
+
+
+\small{
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{p{10.5cm}p{1.7cm}p{1.7cm}}
+\hline
+\textbf{Indicador}                                                             & \textbf{Responsable} & \textbf{Moment} \\
+\hline \endfirsthead
+\hline
+\textbf{Indicador}                                                             & \textbf{Responsable} & \textbf{Moment} \\
+\hline \endhead
+1: Grau de satisfacció del professorat respecte a la comunicació               & Direcció             & Final de curs   \\
+2: Grau de satisfacció del professorat col·laborador respecte a la comunicació & Direcció             & Final de curs   \\
+3: Grau de satisfacció del PAS respecte a la comunicació                       & Direcció             & Final de curs   \\
+4: Grau de satisfacció dels centres de suport respecte a la comunicació        & Direcció             & Final de curs   \\
+\end{longtable}
+}%tanca small
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control de canvis
 
 \section{Control de canvis}
 
-Versió 00. presentada per a la seva revisió i aprovació al novembre 2016.
+\begin{description}
+\item[Versió 00] Creació del document presentada per a la seva revisió i aprovació al novembre 2016.
+\item[Versió 01] S'ha canviat el nom Procediment per Pla.\\ S'han afegit els eixos de comunicació.\\ S'han afegit les seccions: Imatge de centre, Participació en xarxes i Comunicació en moments de risc.\\ S'introdueixen els indicadors en l'avaluació del Pla.
+\end{description}
 
-Versió 01. S'ha canviat el nom Procediment per Pla. S'han afegit els eixos de domunicació
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Gestió del document
 \section{Gestió del document}\label{sec:gestiodoc}
@@ -406,7 +498,7 @@ Versió 01. S'ha canviat el nom Procediment per Pla. S'han afegit els eixos de d
 Nom i cognoms & Joan Queralt & Mercè Vidal             & Joan Queralt \\
 Càrrec        & Director     & Coordinació de Qualitat & Director     \\
 Data          & 08/01/2019   & 08/01/2019              & 08/01/2019   \\\hline
-Signatura     &              &                         &              
+Signatura     &              &                         &
 \end{tabular}
 \end{center}
 
@@ -414,18 +506,21 @@ Signatura     &              &                         &
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\todo[inline]{revisar redactat}
+
 
 \begin{center}
+
 \small
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{p{3cm}p{2cm}p{2cm}p{1.5cm}p{2cm}p{1.5cm}}
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}                  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre} \\
 \hline \endfirsthead
 \hline
-\textbf{Missatge}  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre}\\
+\textbf{Missatge}                  & \textbf{Responsable} & \textbf{Destinataris} & \textbf{Canal} & \textbf{Moment} & \textbf{Registre} \\
 \hline \endhead
-Informació general sobre el centre & Equip directiu & Comunitat & Portal web & Sempre & Portal\\
+Informació general sobre el centre & Equip directiu       & Comunitat             & Portal web     & Sempre          & Portal            \\
 \end{longtable}
 \end{center}
