@@ -3,7 +3,7 @@ paper=a4,%
 %BCOR=12mm,% marge per relligar
 %DIV=calc,%
 DIV=14,%
-%twoside,%per defecte 1 cara
+twoside=semi,%per defecte 1 cara
 pagesize=auto,%
 %parskip=full,% no sagna paràgrafs però dóna més espai entre paràgrafs
 parskip=half,
@@ -56,7 +56,7 @@ table]{xcolor}
 
 %------------ paquets addicionals --------------
 %%%%%%%%%%%%%%%%%%%%%%%% millores d'edició de versions
-\usepackage[catalan,shadow,textwidth=1cm]{todonotes}
+%\usepackage[catalan,shadow,textwidth=1cm]{todonotes}
 
 \usepackage{pdfpages}
 %%%%%%%%%%%%% llistes niuades ------------------
@@ -72,7 +72,7 @@ table]{xcolor}
 
 \usepackage{xspace}                            % Espai automàtic després de macros
 \usepackage{booktabs,array}                    % Taules agradables
-\usepackage{ctable}
+%\usepackage{ctable}
 \usepackage{longtable}
 \usepackage{multicol}
 \usepackage{colortbl}                          % paquet per acolorir taules
@@ -93,7 +93,7 @@ table]{xcolor}
 
 
 %%%%%%%%%%%%%%%%%%%%%%% variables
-\newcommand{\versio}{1}
+\newcommand{\versio}{0}
 \newcommand{\codi}{PlaCom}
 \newcommand{\autor}{Joan Queralt Gil}
 \newcommand{\curs}{2018-19}
@@ -127,16 +127,22 @@ table]{xcolor}
 
 %%%% encapçalaments i peus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[automark]{scrlayer-scrpage} %automark posa automàticament la marca que correspon
-\automark[subsection]{section}
+\usepackage[automark,
+headsepline=.4pt]{scrlayer-scrpage} %automark posa automàticament la marca que correspon
+\automark[section]{section}
+\automark*[subsection]{subsection}
+\clearpairofpagestyles
 \usepackage{lastpage}                        % fa el recompte de pàgines del document
 \clearscrheadfoot
 \pagestyle{scrheadings}
 % fem servir el \pagestyle{scrheadings}
 \setlength{\headheight}{25pt}% assigna 25 punts a l'alçada de la capçalera per fer espai
-\setheadsepline{.4pt}% crea una línia sota la capçalera
+%\setheadsepline{.4pt}% crea una línia sota la capçalera
 \addtokomafont{headsepline}{\color{lightgray}}	% dóna color gris a la línia sota capçalera
+\addtokomafont{pagehead}{\color{lightgray}}	% dóna color gris al text de la capçalera
+\setlength{\footheight}{55pt}%55
 
+\setkomafont{pageheadfoot}{\upshape}
 %%% per treure el número de capítol/secció només a l'encapçalament
 %\renewcommand*{\chaptermarkformat}{}
 %\renewcommand*{\sectionmarkformat}{}
@@ -165,23 +171,27 @@ table]{xcolor}
 \cfoot[
 \begin{center}\footnotesize\sffamily
 \renewcommand{\arraystretch}{1.75}%
-\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
-\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4} & Codi: \codi     & {\normalsize{del centre}}         & {curs \curs}\\ \hline
+\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.5cm}|p{2.6cm}|} \hline
+\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\pagemark} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4} & Codi: \codi     & {\normalsize{del centre}}         & {curs \curs}\\ \hline
 \end{tabular}
-{\color{gray}Assegureu-vos que aquest document és vigent.} Consulteu el web.
+{\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
 \end{center}
 ]
 {
 \begin{center}\footnotesize\sffamily
 \renewcommand{\arraystretch}{1.75}% \begin{tabular}{|p{1.2cm}|p{2cm}|p{7.5cm}|p{2.2cm}|} \hline
-\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.3cm}|p{2.6cm}|} \hline
-\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\thepage} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4} & Codi: \codi     & {\normalsize{del centre}}                    & {curs \curs}\\ \hline
+\begin{tabular}{|p{1.2cm}|p{1,8cm}|p{7.5cm}|p{2.6cm}|} \hline
+\multirow{2}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}} & Versió: \versio & {\normalsize{Pla de comunicació}} & Pàgina {\pagemark} de  {\pageref{LastPage}} \\ \cline{2-2}\cline{4-4} & Codi: \codi     & {\normalsize{del centre}}         & {curs \curs}\\ \hline
 \end{tabular}
 {\color{gray}Assegureu-vos que aquest document és vigent. Consulteu el web.}
 \end{center}}
 %\ofoot{\normalfont\normalcolor{\thepage\ |\  \pageref{LastPage}}}      %peu exterior
 
 
+%% https://tex.stackexchange.com/questions/413652/scrlayer-scrpage-with-pagestyleempty
+
+%\BeforeStartingTOC[toc]{\pagestyle{empty}}
+\AfterStartingTOC{\thispagestyle{plain}}% settings for the last page of TOC, LOF, LOT etc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%% configuració d'hyperref per pdf
 \usepackage{hyperref}
@@ -190,7 +200,7 @@ table]{xcolor}
 
 \pdfstringdef{\Titol}{\titol}
 \pdfstringdef{\Tema}{Pla de comunicació del centre}%
-\pdfstringdef{\Claus}{Pla, comuniació, programació, IOC, responsables, tasques}%
+\pdfstringdef{\Claus}{Pla, comunicació, programació, IOC, responsables, tasques}%
 
 \hypersetup{%
 pdftitle=\Titol,%
@@ -249,11 +259,9 @@ El Pla de comunicació depèn del procés estratègic \textbf{PE04 Gestionar la 
 
 En el darrer anàlisi DAFO realitzat sobre el centre, un dels aspectes més destacables que en sortí va ser les oportunitats que s'obririen amb una millora de la fluïdesa de la comunicació dins de la pròpia organització, però sobretot per donar a conèixer a l'exterior tot allò que estem fent i podem fer a l'IOC.
 
-Hem analitzat les necessitats de comunicació de la organització amb cadascun dels grups d'interès per elaborar un pla de comunicació que s'hi adapti. A l'hora
-d'establir aquest pla, s'han adequat els canals de comunicació al col·lectiu al qual s'adreça el missatge i activar els més efectius perquè sigui accessible a tothom.
+Hem analitzat les necessitats de comunicació de la organització amb cadascun dels grups d'interès per elaborar un pla de comunicació que s'hi adapti. A l'hora d'establir aquest pla, s'han adequat els canals de comunicació al col·lectiu al qual s'adreça el missatge i activar els més efectius perquè sigui accessible a tothom.
 
-Atès que l'IOC transmet missatges de moltes formes i per molts canals, ha de ser curós amb la imatge corporativa que transmet (ordre, neteja, identificació,
-coherència, compromisos, resultats, ètica i estètica) perquè sigui la que realment persegueix el centre.
+Atès que l'IOC transmet missatges de moltes formes i per molts canals, ha de ser curós amb la imatge corporativa que transmet (ordre, neteja, identificació, coherència, compromisos, resultats, ètica i estètica) perquè sigui la que realment persegueix el centre.
 
 Disposem d'un logo corporatiu i d'una \textit{Guia d'estil} per les seves comunicacions internes i externes.
 
@@ -298,6 +306,9 @@ Projectes en els quals participa o impulsa & Equip directiu       & Comunitat   
 
 \subsection{Difusió externa}
 
+L'objectiu de la difusió externa és difondre l'oferta i els serveis educatius que ofereix l'IOC per informar i fidelitzar als estudiant i als futurs usuaris. 
+
+Fem un seguit d'accions adreçades a cobrir i augmentar la fluïdesa de la comunicació i la informació cap als possibles usuaris del servei que proporciona l'IOC, amb la intenció d'incrementar la valoració del centre i, en conseqüència, acabin inscrivint-s'hi.
 
 \small{
 \setlength{\tabcolsep}{10pt}
@@ -323,6 +334,15 @@ Reunions amb centres de suport      & Direccions acadèmiques & Responsables del
 
 \subsection{Comunicació interna}
 
+La comunicació interna inclou les comunicacions que impliquen totes les persones dels
+diferents àmbits que hi ha al centre. Per això no ha de ser unidireccional, ja que és
+molt important que hi hagi retroalimentació per integrar, així, tot el personal del centre. 
+
+Està centrada en les persones, i ens ha d'ajudar a implicar en el projecte educatiu al
+professorat, professorat col·laborador, conserges, administratius, telefonista i personal de neteja per crear un clima de treball cordial, professional i de confiança.
+
+La intenció de la comunicació interna és la gestió del coneixement de l'organització, creant un canal de comunicació i establint una estructura i procés documental de la
+informació que navegui per tota l'organització, la transmeti i la perfeccioni.
 
 \small{
 \setlength{\tabcolsep}{10pt}
@@ -344,12 +364,18 @@ Reunions d'Equips docents                & Direccions acadèmiques   & Professor
 Reunions de coordinacions                & Direccions acadèmiques   & Professorat corresponent                 & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
 Reunions de tutors                       & Coordinacions de tutoria & Professorat corresponent                 & Fòrum          & Quan correspongui    & Convocatòria i acta                                        \\
 Juntes d'avaluació                       & Direccions acadèmiques   & Professorat corresponent                 & Fòrum          & A final de període   & Convocatòria, informes dels centres de suport (GES) i acta \\
+Reunions amb el PAS                       & Direcció
+
+Coordinadora del PAS & PAS                 & Fòrum          & Quan correspongui  & Convocatòria i acta \\
 \end{longtable}
 }%tanca small
 
 
 \subsection{Participació en xarxes}
 
+L'IOC ha de participar en diferents xarxes socials i en d'altres de relació amb altres institucions educatives que comparteixen amb nosaltres objectius comuns.
+
+Pel que fa a xarxes socials, amb l'avantatge que representa la seva immediates, ens permeten arribar ràpidament a un públic potencial que vol conèixer més sobre el centre. Per altra banda les xarxes de coneixement compartit, com ara EDEN, ens han de permetre aprendre d'altres organitzacions d'eLearning i exposar les nostres aportacions.
 
 \small{
 \setlength{\tabcolsep}{10pt}
@@ -372,24 +398,25 @@ Notícies pròpies  & Coordinacions        & Comunitat             & Twitter    
 @IOC\_PACFGS\_MA
 
 @dep\_prp\_IOC                                                                                                             \\
+Presentacions de l'IOC                      & Professorat   & EDEN
+
+altres xarxes de coneixement & Articles
+
+Presentacions & Quan s'esdevingui   & Actes, articles, presentacions\\
 \end{longtable}
 }%tanca small
 
 
 \subsection{Comunicació en moments de crisi}
 
-En situacions complexes i urgents haurem d'establir quines actuacions es duran a terme que contribueixin a millorar la situació, sempre amb calma, transparència i organització. L'objectiu és mirar d'estalviar queixes, rumors i
-males interpretacions de situacions que poden generar conflicte i anticipar-ne les solucions.
+En situacions complexes que exigeixen resposta urgent haurem d'establir quines actuacions es duran a terme per contribuir a millorar la situació, sempre amb calma, transparència i organització. L'objectiu és mirar d'estalviar queixes, rumors i males interpretacions de situacions que poden arribar a generar conflicte i, així, anticipar-ne les solucions.
 
 La informació que s'ha de donar en moments així ha de ser seriosa, transparent, verídica i clara. El silenci mai no és rendible, cal informar i cal fer-ho des del primer moment però, sobretot, cal que la informació sigui rigorosa, intel·ligible per part dels receptors, transparent i sobretot verídica. Potser no podrem explicar tota la veritat, però allò que diguem ha de ser cert.
 
 Qui ha de donar resposta en moments així és l'equip directiu del centre, i
 serà la Direcció qui ha de comandar la comunicació de les crisis.
 
-El/la portaveu és una figura clau en la gestió d'una crisi. Ha de transmetre
-confiança, proximitat, seguretat i credibilitat. Saber qui ha de parlar, què ha
-de dir i quan ha de dir-ho és essencial per transmetre adequadament els
-missatges durant una crisi.
+Qui dóna la informació és una figura clau en la gestió d'una crisi. Ha de saber transmetre confiança, proximitat, seguretat i credibilitat. Saber qui ha de parlar, què ha de dir i quan ha de dir-ho és essencial per transmetre adequadament els missatges durant una crisi.
 
 
 
@@ -410,7 +437,9 @@ whatsapp
 
 telèfon particular
                    & Sempre que succeeixi & El que correspongui                                                               \\
-Endarreriment del pagament del professoat col·laborador & Direcció & Prof. col·laborador & Fòrum de les Sales & Quan es produeixi & Entrada al fòrum\\
+Endarreriment del pagament del professoat col·laborador & Direcció
+
+Dir.Acads & Professors col·laboradors & Fòrum de les Sales & Quan es produeixi & Entrada al fòrum\\
 \end{longtable}
 }%tanca small
 
@@ -439,7 +468,7 @@ El funcionament de l'IOC està basat en unes infraestructures que li donen supor
 \item Mahara com a base pel portafolis digital
 \item Joomla com a base pel portal web ioc.xtec.cat
 \item Dokuwiki per generar i publicar materials formatius
-\item Pàgines consultives (web del departament d‟Ensenyament):
+\item Pàgines consultives (web del departament d'Ensenyament):
       \begin{itemize}
       \item XTEC: xtec.cat
       \item GENCAT: gencat.cat/educacio
@@ -447,7 +476,7 @@ El funcionament de l'IOC està basat en unes infraestructures que li donen supor
       \end{itemize}
 \end{itemize}
 
-\section{Execució i avaluació}\label{sec:execiaval}
+\section{Avaluació}\label{sec:aval}
 
 L'avaluació del Pla de Comunicació té com a objectiu mesurar la percepció de
 millora en la comunicació per part dels usuaris (professors, professors col·laboradors, PAS o centres de suport.
@@ -476,7 +505,7 @@ Utilitzarem diferents indicadors:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Control de canvis
 
-\section{Control de canvis}
+\section{Control de canvis}\label{sec:ctrlcanvis}
 
 \begin{description}
 \item[Versió 00] Creació del document presentada per a la seva revisió i aprovació al novembre 2016.
@@ -493,11 +522,11 @@ Utilitzarem diferents indicadors:
 
 \begin{center}\scriptsize\sffamily
 \renewcommand{\arraystretch}{1.75}%
-\begin{tabular}{lllp{4cm}}\hline
+\begin{tabular}{p{3cm}p{3cm}p{3cm}p{3cm}}\hline
               & Elaborat per & Revisat per             & Aprovat per  \\ \hline
 Nom i cognoms & Joan Queralt & Mercè Vidal             & Joan Queralt \\
 Càrrec        & Director     & Coordinació de Qualitat & Director     \\
-Data          & 08/01/2019   & 08/01/2019              & 08/01/2019   \\\hline
+Data          & 08/01/2019   & 08/01/2019              & 15/01/2019   \\\hline
 Signatura     &              &                         &
 \end{tabular}
 \end{center}
